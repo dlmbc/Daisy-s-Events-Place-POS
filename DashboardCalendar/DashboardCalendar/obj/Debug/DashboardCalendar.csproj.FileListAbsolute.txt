@@ -1,10 +1,10 @@
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\bin\Debug\DashboardCalendar.exe.config
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\bin\Debug\DashboardCalendar.exe
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\bin\Debug\DashboardCalendar.pdb
-C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.csprojAssemblyReference.cache
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.Form1.resources
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.Properties.Resources.resources
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.csproj.GenerateResource.cache
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.csproj.CoreCompileInputs.cache
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.exe
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.pdb
+C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.csprojAssemblyReference.cache

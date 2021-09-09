@@ -12,29 +12,123 @@ namespace DashboardCalendar
 {
     public partial class Form1 : Form
     {
+        List<FlowLayoutPanel> listDay = new List<FlowLayoutPanel>();
+        DateTime currentDate = DateTime.Today;
+
         public Form1()
         {
             InitializeComponent();
+            PrintCalendar();
+            DisplayCurrentMonth();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            timer1.Start();
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        public int firstDayOfMonth()
         {
-
+            DateTime firstDay = new DateTime(currentDate.Year, currentDate.Month, 1);
+            return (int)firstDay.DayOfWeek + 1;
         }
 
-        private void panel10_Paint(object sender, PaintEventArgs e)
+        public int totalDayOfMonth()
         {
-
+            int currentMontFirstDay = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
+            return currentMontFirstDay;
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
+        private void DisplayCurrentMonth()
         {
+            lblMonths.Text = currentDate.ToString("MMMM yyyy").ToUpper();
+            addDayToFl(firstDayOfMonth(), totalDayOfMonth());
+        }
 
+        private void PreviousMonth()
+        {
+            currentDate = currentDate.AddMonths(-1);
+            DisplayCurrentMonth();
+        }
+
+        private void NextMonth()
+        {
+            currentDate = currentDate.AddMonths(1);
+            DisplayCurrentMonth();
+        }
+
+        public void PrintCalendar()
+        {
+            listDay.Clear();
+            datePanel.Controls.Clear();
+
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 7; j++)
+                {
+                    FlowLayoutPanel fl = new FlowLayoutPanel();
+                    fl.Size = new Size(145, 72);
+                    fl.BorderStyle = BorderStyle.None;
+                    fl.Location = new Point(0 + (j * 145), 0 + (i * 72));
+                    fl.Margin = new Padding(9, 0, 2, 10);
+                    datePanel.Controls.Add(fl);
+                    listDay.Add(fl);
+                }
+            }
+        }
+
+        public void addDayToFl(int startDay, int endDate)
+        {
+            string hexColor = "#E6E6E6";
+            string hexColor1 = "#808080";
+            Color bColor = System.Drawing.ColorTranslator.FromHtml(hexColor);
+            Color cColor = System.Drawing.ColorTranslator.FromHtml(hexColor1);
+
+            foreach (FlowLayoutPanel fl in listDay)
+            {
+                fl.Controls.Clear();
+                fl.BackColor = bColor;
+            }
+
+            for (int i = 1; i <= endDate; i++)
+            {
+                Label lbl = new Label();
+                lbl.AutoSize = false;
+                lbl.TextAlign = ContentAlignment.MiddleRight;
+                lbl.Size = new Size(145, 20);
+                lbl.Text = i.ToString();
+                lbl.Font = new Font("Montserrat", 14);
+                listDay[(i - 1) + (startDay - 1)].Controls.Add(lbl);
+
+                if (new DateTime(currentDate.Year, currentDate.Month, i) == DateTime.Today)
+                {
+                    listDay[(startDay - 1) + (i - 1)].BackColor = cColor;
+                }
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDay.Text = DateTime.Now.ToString("dd");
+            lblMonth.Text = DateTime.Now.ToString("MMMM").ToUpper();
+            lblYear.Text = DateTime.Now.ToString("yyyy");
+
+            Time.Text = DateTime.Now.ToString("HH : mm");
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            PreviousMonth();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            NextMonth();
         }
     }
 }
