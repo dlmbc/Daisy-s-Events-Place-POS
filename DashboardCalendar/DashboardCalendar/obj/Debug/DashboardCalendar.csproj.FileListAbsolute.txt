@@ -8,3 +8,6 @@ C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\Dashboa
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.exe
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.pdb
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.csprojAssemblyReference.cache
+C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.CustomerForm.resources
+C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.DashboardForm.resources
+C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.ScheduleForm.resources

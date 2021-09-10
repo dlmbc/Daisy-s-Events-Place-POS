@@ -12,14 +12,18 @@ namespace DashboardCalendar
 {
     public partial class Form1 : Form
     {
-        List<FlowLayoutPanel> listDay = new List<FlowLayoutPanel>();
-        DateTime currentDate = DateTime.Today;
+        private Form currentForm;
 
         public Form1()
         {
             InitializeComponent();
-            PrintCalendar();
-            DisplayCurrentMonth();
+
+            OpenForm(new DashboardForm());
+            /*PanelForm1.Controls.Clear();
+            DashboardForm dashboardForm_Vrb = new DashboardForm();
+            dashboardForm_Vrb.FormBorderStyle = FormBorderStyle.None;
+            PanelForm1.Controls.Add(dashboardForm_Vrb);
+            dashboardForm_Vrb.Show();*/
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,84 +31,14 @@ namespace DashboardCalendar
             timer1.Start();
         }
 
-        public int firstDayOfMonth()
+        private void OpenForm(Form childForm)
         {
-            DateTime firstDay = new DateTime(currentDate.Year, currentDate.Month, 1);
-            return (int)firstDay.DayOfWeek + 1;
-        }
-
-        public int totalDayOfMonth()
-        {
-            int currentMontFirstDay = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
-            return currentMontFirstDay;
-        }
-
-        private void DisplayCurrentMonth()
-        {
-            lblMonths.Text = currentDate.ToString("MMMM yyyy").ToUpper();
-            addDayToFl(firstDayOfMonth(), totalDayOfMonth());
-        }
-
-        private void PreviousMonth()
-        {
-            currentDate = currentDate.AddMonths(-1);
-            DisplayCurrentMonth();
-        }
-
-        private void NextMonth()
-        {
-            currentDate = currentDate.AddMonths(1);
-            DisplayCurrentMonth();
-        }
-
-        public void PrintCalendar()
-        {
-            listDay.Clear();
-            datePanel.Controls.Clear();
-
-            for (int i = 0; i < 6; i++)
-            {
-                for (int j = 0; j < 7; j++)
-                {
-                    FlowLayoutPanel fl = new FlowLayoutPanel();
-                    fl.Size = new Size(145, 72);
-                    fl.BorderStyle = BorderStyle.None;
-                    fl.Location = new Point(0 + (j * 145), 0 + (i * 72));
-                    fl.Margin = new Padding(9, 0, 2, 10);
-                    datePanel.Controls.Add(fl);
-                    listDay.Add(fl);
-                }
-            }
-        }
-
-        public void addDayToFl(int startDay, int endDate)
-        {
-            string hexColor = "#E6E6E6";
-            string hexColor1 = "#808080";
-            Color bColor = System.Drawing.ColorTranslator.FromHtml(hexColor);
-            Color cColor = System.Drawing.ColorTranslator.FromHtml(hexColor1);
-
-            foreach (FlowLayoutPanel fl in listDay)
-            {
-                fl.Controls.Clear();
-                fl.BackColor = bColor;
-            }
-
-            for (int i = 1; i <= endDate; i++)
-            {
-                Label lbl = new Label();
-                lbl.AutoSize = false;
-                lbl.TextAlign = ContentAlignment.MiddleRight;
-                lbl.Size = new Size(145, 20);
-                lbl.Text = i.ToString();
-                lbl.Font = new Font("Montserrat", 14);
-                listDay[(i - 1) + (startDay - 1)].Controls.Add(lbl);
-
-                if (new DateTime(currentDate.Year, currentDate.Month, i) == DateTime.Today)
-                {
-                    listDay[(startDay - 1) + (i - 1)].BackColor = cColor;
-                }
-            }
+            PanelForm1.Controls.Clear();
+            currentForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            PanelForm1.Controls.Add(childForm);
+            childForm.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -121,14 +55,35 @@ namespace DashboardCalendar
             Application.Exit();
         }
 
-        private void btnPrevious_Click(object sender, EventArgs e)
+
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
-            PreviousMonth();
+            OpenForm(new DashboardForm());
+            /*PanelForm1.Controls.Clear();
+            DashboardForm dashboardForm_Vrb = new DashboardForm();
+            dashboardForm_Vrb.FormBorderStyle = FormBorderStyle.None;
+            PanelForm1.Controls.Add(dashboardForm_Vrb);
+            dashboardForm_Vrb.Show();*/
         }
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private void btnSchedule_Click(object sender, EventArgs e)
         {
-            NextMonth();
+            OpenForm(new ScheduleForm());
+            /*PanelForm1.Controls.Clear();
+            ScheduleForm scheduleForm_Vrb = new ScheduleForm();
+            scheduleForm_Vrb.FormBorderStyle = FormBorderStyle.None;
+            PanelForm1.Controls.Add(scheduleForm_Vrb);
+            scheduleForm_Vrb.Show();*/
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            OpenForm(new CustomerForm());
+            /*PanelForm1.Controls.Clear();
+            CustomerForm customerForm_Vrb = new CustomerForm();
+            customerForm_Vrb.FormBorderStyle = FormBorderStyle.None;
+            PanelForm1.Controls.Add(customerForm_Vrb);
+            customerForm_Vrb.Show();*/
         }
     }
 }
