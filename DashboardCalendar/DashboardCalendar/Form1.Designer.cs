@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAddR = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnSchedule = new System.Windows.Forms.Button();
@@ -55,6 +56,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.panel1.Controls.Add(this.btnAddR);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnCustomer);
             this.panel1.Controls.Add(this.btnSchedule);
@@ -64,8 +66,29 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(234, 770);
+            this.panel1.Size = new System.Drawing.Size(234, 768);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAddR
+            // 
+            this.btnAddR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnAddR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddR.FlatAppearance.BorderSize = 0;
+            this.btnAddR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddR.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddR.ForeColor = System.Drawing.Color.White;
+            this.btnAddR.Image = global::DashboardCalendar.Properties.Resources.wform;
+            this.btnAddR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddR.Location = new System.Drawing.Point(0, 256);
+            this.btnAddR.Name = "btnAddR";
+            this.btnAddR.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnAddR.Size = new System.Drawing.Size(234, 40);
+            this.btnAddR.TabIndex = 6;
+            this.btnAddR.Text = "    RESERVATION\r\n";
+            this.btnAddR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddR.UseVisualStyleBackColor = false;
+            this.btnAddR.Click += new System.EventHandler(this.btnAddR_Click);
             // 
             // btnLogOut
             // 
@@ -76,13 +99,14 @@
             this.btnLogOut.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.Image = global::DashboardCalendar.Properties.Resources.logout;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 730);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 728);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(234, 40);
             this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "   Log Out";
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnCustomer
             // 
@@ -90,14 +114,16 @@
             this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCustomer.FlatAppearance.BorderSize = 0;
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomer.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomer.ForeColor = System.Drawing.Color.White;
             this.btnCustomer.Image = global::DashboardCalendar.Properties.Resources.customer;
+            this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomer.Location = new System.Drawing.Point(0, 216);
             this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnCustomer.Size = new System.Drawing.Size(234, 40);
             this.btnCustomer.TabIndex = 4;
-            this.btnCustomer.Text = "    Customer";
+            this.btnCustomer.Text = "    CUSTOMER";
             this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCustomer.UseVisualStyleBackColor = false;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
@@ -108,32 +134,36 @@
             this.btnSchedule.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSchedule.FlatAppearance.BorderSize = 0;
             this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSchedule.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSchedule.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSchedule.ForeColor = System.Drawing.Color.White;
             this.btnSchedule.Image = global::DashboardCalendar.Properties.Resources.schedule;
+            this.btnSchedule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSchedule.Location = new System.Drawing.Point(0, 176);
             this.btnSchedule.Name = "btnSchedule";
+            this.btnSchedule.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
             this.btnSchedule.Size = new System.Drawing.Size(234, 40);
             this.btnSchedule.TabIndex = 3;
-            this.btnSchedule.Text = "   Schedule";
+            this.btnSchedule.Text = "   SCHEDULE     ";
             this.btnSchedule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSchedule.UseVisualStyleBackColor = false;
             this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // btnDashboard
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.Silver;
+            this.btnDashboard.BackColor = System.Drawing.Color.DimGray;
             this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnDashboard.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.Black;
             this.btnDashboard.Image = global::DashboardCalendar.Properties.Resources.dashboard;
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.Location = new System.Drawing.Point(0, 136);
             this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
             this.btnDashboard.Size = new System.Drawing.Size(234, 40);
             this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.Text = "   Dashboard";
+            this.btnDashboard.Text = "   DASHBOARD";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
@@ -213,11 +243,11 @@
             this.Time.AutoSize = true;
             this.Time.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Time.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time.Location = new System.Drawing.Point(1252, 50);
+            this.Time.Location = new System.Drawing.Point(1203, 50);
             this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(87, 33);
+            this.Time.Size = new System.Drawing.Size(132, 33);
             this.Time.TabIndex = 5;
-            this.Time.Text = "12 : 00";
+            this.Time.Text = "12 : 00 AM";
             this.Time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClose
@@ -258,7 +288,7 @@
             // 
             this.PanelForm1.Location = new System.Drawing.Point(235, 114);
             this.PanelForm1.Name = "PanelForm1";
-            this.PanelForm1.Size = new System.Drawing.Size(1128, 656);
+            this.PanelForm1.Size = new System.Drawing.Size(1128, 654);
             this.PanelForm1.TabIndex = 49;
             // 
             // Form1
@@ -266,7 +296,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.ClientSize = new System.Drawing.Size(1365, 770);
+            this.ClientSize = new System.Drawing.Size(1365, 768);
             this.Controls.Add(this.PanelForm1);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel7);
@@ -310,6 +340,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel PanelForm1;
+        protected internal System.Windows.Forms.Button btnAddR;
     }
 }
 

@@ -11,3 +11,6 @@ C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\Dashboa
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.CustomerForm.resources
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.DashboardForm.resources
 C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.ScheduleForm.resources
+C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.ReservationForm.resources
+C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.ResetPassword.resources
+C:\Users\Asus\source\repos\DashboardCalendar\DashboardCalendar\obj\Debug\DashboardCalendar.LoginForm.resources

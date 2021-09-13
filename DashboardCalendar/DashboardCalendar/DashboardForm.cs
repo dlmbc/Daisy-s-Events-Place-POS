@@ -22,11 +22,6 @@ namespace DashboardCalendar
             DisplayCurrentMonth();
         }
 
-        private void DashboardForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public int firstDayOfMonth()
         {
             DateTime firstDay = new DateTime(currentDate.Year, currentDate.Month, 1);
@@ -95,7 +90,7 @@ namespace DashboardCalendar
                 Label lbl = new Label();
                 lbl.AutoSize = false;
                 lbl.TextAlign = ContentAlignment.MiddleRight;
-                lbl.Size = new Size(145, 20);
+                lbl.Size = new Size(145, 30);
                 lbl.Text = i.ToString();
                 lbl.Font = new Font("Montserrat", 14);
                 listDay[(i - 1) + (startDay - 1)].Controls.Add(lbl);
